@@ -1,20 +1,17 @@
 package com.mycompany.app;
 
-public class App 
-{
- public static void main(String[] args) 
-    {
-        String[] strArray = {"abc", "def", "mno", "xyz", "pqr", "xyz", "def"};
+import java.util.Arrays;
+import java.util.List;
+import java.util.TreeSet;
  
-        for (int i = 0; i < strArray.length-1; i++)
-        {
-            for (int j = i+1; j < strArray.length; j++)
-            {
-                if( (strArray[i].equals(strArray[j])) && (i != j) )
-                {
-                    System.out.println("Duplicate Element is : "+strArray[j]);
-                }
-            }
-        }
-    } 
+public class App {
+ 
+    public static void main(String a[]){
+        String[] strArr = {"one","two","three","four","four","five"};
+        //convert string array to list
+        List<String> tmpList = Arrays.asList(strArr);
+        //create a treeset with the list, which eliminates duplicates
+        TreeSet<String> unique = new TreeSet<String>(tmpList);
+        System.out.println(unique);
+    }
 }
